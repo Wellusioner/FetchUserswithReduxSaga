@@ -33,11 +33,43 @@ body::before{
   max-width: 1200px;
 }
 
-
 .app-title{
   text-align: center;
   color: #fff;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+.search-wrapper{
+  padding-bottom: 2rem;
+}
+.search-wrapper form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #444;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #444;
+}
+.search-wrapper form input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  border: 0;
+  outline: none !important;
+}
+
+.search-wrapper button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background: #08ac8c;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s linear;
 }
 
 .user-button{
@@ -63,7 +95,8 @@ body::before{
   text-shadow: 0 1px 1px #222;
 }
 
-.user-button:hover{
+.user-button:hover,
+.search-wrapper button:hover{
   background-color: #048b70;
 }
 

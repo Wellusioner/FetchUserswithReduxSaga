@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {getNews} from '../redux/actions'
+import { getUsers } from '../redux/actions'
 
-function Button({ getNews, fetching }) {
+function Button({ getUsers, fetching }) {
   return (
-    !fetching ? <button className="user-button" onClick={ getNews }>Get users</button> : ''
+    !fetching ? <button className="user-button" onClick={ getUsers }>Get users</button> : ''
   )
 }
 
 const mapDispatchToProps = {
-  getNews
+  getUsers
 }
 
 const mapStateToProps = state => {

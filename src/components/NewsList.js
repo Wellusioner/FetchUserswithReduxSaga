@@ -6,7 +6,13 @@ function NewsList({ users }) {
   
   return (
     <div className="users-group">
-      { users && users.map( user => <User key={user.id} user={ user } /> ) }
+      { 
+        users 
+        ? 
+        users.map( user => <User key={user.id} user={ user } /> ) 
+        : 
+        <div>Not found</div>
+      }
     </div>
   )
 }
