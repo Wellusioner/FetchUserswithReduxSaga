@@ -1,13 +1,177 @@
+html, body{
+  height: 100%;
+}
 body {
+  position: relative;
   margin: 0;
+  padding: 10px 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #222;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./github.jpg') no-repeat center;
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.container{
+  margin: auto;
+  width: 85%;
+  max-width: 1200px;
+}
+
+
+.app-title{
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4rem;
+}
+
+.user-button{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  border: none;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  background-color: #08ac8c;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 3px rgba(0,0,0, 0.3);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s linear;
+  font-size: 18px;
+  text-shadow: 0 1px 1px #222;
+}
+
+.user-button:hover{
+  background-color: #048b70;
+}
+
+
+.users-group{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.users-group .column{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 25px;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+
+@media(max-width: 991px) and (min-width: 576px){
+  .users-group .column{
+    width: 50%;
+  }
+}
+
+@media(max-width: 575px){
+  .users-group .column{
+    width: 100%;
+  }
+}
+
+.users-group .user{
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background-color: #474747;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+.users-group .user:hover{
+  transform: translateY(-3px);
+}
+.users-group .user img{
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.user .user-body{
+  padding: 10px 0;
+}
+
+.user-body .user-link{
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.user-body .user-link:hover{
+  color: aqua;
+}
+
+
+.loader{
+  width: 100px;
+  top: 50%;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* LOADER 1 */
+
+#loader-1:before, #loader-1:after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  border-top-color: #01b187;
+}
+
+#loader-1:before{
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#loader-1:after{
+  border: 10px solid #6d6d6d;
+}
+
+@keyframes spin{
+  0%{
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%{
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
